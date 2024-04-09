@@ -37,6 +37,9 @@ const Login = () => {
     dispatch(login(email, password));
   };
 
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard' />;
+  }
 
   return (
     <Container component='main' maxWidth='xs' className={classes.container}>
