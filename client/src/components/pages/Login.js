@@ -13,8 +13,6 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
-import Copyright from '../other/Copyright';
 import useStyles from '../../utils/formStyles';
 
 const Login = () => {
@@ -49,10 +47,10 @@ const Login = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component='h1' variant='h4'>
-          TrelloClone
+          Padlet
         </Typography>
         <Typography component='h1' variant='h5'>
-          Sign in
+          Iniciar Sesion
         </Typography>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
           <TextField
@@ -86,19 +84,19 @@ const Login = () => {
             color='primary'
             className={classes.submit}
           >
-            Sign In
+            Iniciar Sesion
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
               <Link href='/register' variant='body2'>
-                Don't have an account? Sign Up
+                No tienes cuenta? Registrarse
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
       <Box mt={8}>
-        <Copyright />
+        
       </Box>
     </Container>
   );

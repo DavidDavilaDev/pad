@@ -7,7 +7,7 @@ const Landing = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   useEffect(() => {
-    document.title = 'TrelloClone';
+    document.title = 'Padlet';
   }, []);
 
   if (isAuthenticated) {
@@ -17,24 +17,24 @@ const Landing = () => {
   return (
     <section className='landing'>
       <nav className='top'>
-        <h2>TrelloClone</h2>
+        <h2>Padlet</h2>
         <div>
           <Button color='inherit' href='/login'>
-            Login
+            Iniciar Sesion
           </Button>
           <Button variant='contained' href='/register'>
-            Sign Up
+            Registrarse
           </Button>
         </div>
       </nav>
       <div className='landing-inner'>
-        <h1>TrelloClone</h1>
+        <h1>Padlet</h1>
         <p>
-          Just like <a href='https://trello.com/'>Trello</a>, but made by just one guy!
+          
         </p>
         <div className='buttons'>
           <Button variant='outlined' color='inherit' href='/register'>
-            Sign Up
+            Registrarse
           </Button>
         </div>
       </div>

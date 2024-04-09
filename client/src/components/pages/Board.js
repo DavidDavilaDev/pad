@@ -21,7 +21,7 @@ const Board = ({ match }) => {
   }, [dispatch, match.params.id]);
 
   useEffect(() => {
-    if (board?.title) document.title = board.title + ' | TrelloClone';
+    if (board?.title) document.title = board.title + ' | Padlet';
   }, [board?.title]);
 
   if (!isAuthenticated) {
@@ -61,7 +61,7 @@ const Board = ({ match }) => {
           'url(' +
           (board.backgroundURL
             ? board.backgroundURL
-            : 'https://images.unsplash.com/photo-1598197748967-b4674cb3c266?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2689&q=80') +
+            : 'https://imgs.search.brave.com/jtys-BFyY3kxeMCPH3chov6faqfD25AhCvpLfdZSf_s/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ2/MDIyMDY0Ni9lcy9m/b3RvL2hvbWJyZS1k/ZS1wbGFuaWZpY2Fj/aSVDMyVCM24tY29y/cG9yYXRpdm8tby1k/ZS1uZWdvY2lvcy1j/b24tdGFibGV0YS1w/YXJhLWVzdHJhdGVn/aWEtZGUtaW52ZXJz/aSVDMyVCM24ud2Vi/cD9iPTEmcz0xNzA2/NjdhJnc9MCZrPTIw/JmM9VF9yYTVhUndX/cWcwanl6SkFlTzk1/VC1yY3B5YXBBTV9V/aFItdmE1dXdxMD0') +
           ')',
       }}
     >

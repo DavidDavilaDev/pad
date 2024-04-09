@@ -31,7 +31,7 @@ const Register = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    document.title = 'TrelloClone | Sign Up';
+    document.title = 'Padlet | Registrarse ';
   }, []);
 
   const { name, email, password, password2 } = formData;
@@ -56,10 +56,10 @@ const Register = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component='h1' variant='h4'>
-          TrelloClone
+          Padlet
         </Typography>
         <Typography component='h1' variant='h5'>
-          Sign up
+          Registrarse
         </Typography>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
           <Grid container spacing={2}>
@@ -120,19 +120,19 @@ const Register = () => {
             color='primary'
             className={classes.submit}
           >
-            Sign Up
+            Registrarse
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
               <Link href='/login' variant='body2'>
-                Already have an account? Sign in
+                Ya tienes una cuenta? Iniciar Sesion
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
       <Box mt={5}>
-        <Copyright />
+        
       </Box>
     </Container>
   );
