@@ -14,9 +14,14 @@ const Navbar = () => {
   return (
     <nav className='navbar'>
       <Link to='/dashboard'>Home</Link>
+<<<<<<< HEAD
       <Link to='/dashboard'>Padlet</Link>
       <Link to='/' onClick={() => dispatch(logout())}>
         Cerrar Sesion
+=======
+      <Link to='/' onClick={() => dispatch(logout())}>
+        Cerrar Sesión
+>>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
       </Link>
     </nav>
   );
