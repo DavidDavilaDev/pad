@@ -44,14 +44,10 @@ const Login = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component='h1' variant='h4'>
-<<<<<<< HEAD
           Padlet
         </Typography>
         <Typography component='h1' variant='h5'>
           Iniciar Sesion
-=======
-          Inicia Sesión
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
         </Typography>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
           <TextField
@@ -85,20 +81,13 @@ const Login = () => {
             color='primary'
             className={classes.submit}
           >
-<<<<<<< HEAD
             Iniciar Sesion
-=======
-            Iniciar
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
+
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
               <Link href='/register' variant='body2'>
-<<<<<<< HEAD
                 No tienes cuenta? Registrarse
-=======
-                No tienes cuenta? Registrate
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
               </Link>
             </Grid>
           </Grid>

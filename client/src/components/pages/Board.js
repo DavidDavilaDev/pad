@@ -21,11 +21,8 @@ const Board = ({ match }) => {
   }, [dispatch, match.params.id]);
 
   useEffect(() => {
-<<<<<<< HEAD
     if (board?.title) document.title = board.title + ' | Padlet';
-=======
     if (board?.title) document.title = board.title + '';
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
   }, [board?.title]);
 
   if (!isAuthenticated) {

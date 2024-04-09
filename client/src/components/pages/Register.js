@@ -30,12 +30,10 @@ const Register = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
 
-<<<<<<< HEAD
   useEffect(() => {
     document.title = 'Padlet | Registrarse ';
   }, []);
-=======
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
+
 
   const { name, email, password, password2 } = formData;
 
@@ -59,14 +57,10 @@ const Register = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component='h1' variant='h4'>
-<<<<<<< HEAD
           Padlet
         </Typography>
         <Typography component='h1' variant='h5'>
           Registrarse
-=======
-          Sign up
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
         </Typography>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
           <Grid container spacing={2}>
@@ -127,20 +121,13 @@ const Register = () => {
             color='primary'
             className={classes.submit}
           >
-<<<<<<< HEAD
             Registrarse
-=======
-            Registrar
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
               <Link href='/login' variant='body2'>
-<<<<<<< HEAD
+
                 Ya tienes una cuenta? Iniciar Sesion
-=======
-                Ya tienes cuenta? Inicia sesión
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
               </Link>
             </Grid>
           </Grid>

@@ -16,12 +16,12 @@ const Dashboard = () => {
     dispatch(getBoards());
   }, [dispatch]);
 
-<<<<<<< HEAD
+
   useEffect(() => {
     document.title = 'Your Boards | Padlet';
   }, []);
-=======
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
+
+
 
   if (!isAuthenticated) {
     return <Redirect to='/' />;
@@ -31,12 +31,6 @@ const Dashboard = () => {
     <div className='dashboard-and-navbar'>
       <Navbar />
       <section className='dashboard'>
-<<<<<<< HEAD
-        <h1>Bienvenido {user && user.name}</h1>
-        <h2>Tus tableros</h2>
-=======
-        <h1>Beinvenido {user && user.name}</h1>
->>>>>>> d06ef2ca0972e2bf5b63b613e97c4954ec0f5fc3
         {loading && <CircularProgress className='dashboard-loading' />}
         <div className='boards'>
           {boards.map((board) => (
