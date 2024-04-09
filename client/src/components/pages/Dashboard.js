@@ -16,9 +16,6 @@ const Dashboard = () => {
     dispatch(getBoards());
   }, [dispatch]);
 
-  useEffect(() => {
-    document.title = 'Your Boards | TrelloClone';
-  }, []);
 
   if (!isAuthenticated) {
     return <Redirect to='/' />;
@@ -28,8 +25,7 @@ const Dashboard = () => {
     <div className='dashboard-and-navbar'>
       <Navbar />
       <section className='dashboard'>
-        <h1>Welcome {user && user.name}</h1>
-        <h2>Your Boards</h2>
+        <h1>Beinvenido {user && user.name}</h1>
         {loading && <CircularProgress className='dashboard-loading' />}
         <div className='boards'>
           {boards.map((board) => (

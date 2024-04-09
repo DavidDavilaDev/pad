@@ -30,9 +30,6 @@ const Register = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    document.title = 'TrelloClone | Sign Up';
-  }, []);
 
   const { name, email, password, password2 } = formData;
 
@@ -56,9 +53,6 @@ const Register = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component='h1' variant='h4'>
-          TrelloClone
-        </Typography>
-        <Typography component='h1' variant='h5'>
           Sign up
         </Typography>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
@@ -70,7 +64,7 @@ const Register = () => {
                 variant='outlined'
                 required
                 fullWidth
-                label='Your Name'
+                label='Nombre'
                 autoFocus
                 value={name}
                 onChange={(e) => onChange(e)}
@@ -81,7 +75,7 @@ const Register = () => {
                 variant='outlined'
                 required
                 fullWidth
-                label='Email Address'
+                label='Correo'
                 name='email'
                 autoComplete='email'
                 value={email}
@@ -94,7 +88,7 @@ const Register = () => {
                 required
                 fullWidth
                 name='password'
-                label='Password'
+                label='Contraseña'
                 type='password'
                 value={password}
                 onChange={(e) => onChange(e)}
@@ -106,7 +100,7 @@ const Register = () => {
                 required
                 fullWidth
                 name='password2'
-                label='Confirm Password'
+                label='Confirma tu contraseña'
                 type='password'
                 value={password2}
                 onChange={(e) => onChange(e)}
@@ -120,12 +114,12 @@ const Register = () => {
             color='primary'
             className={classes.submit}
           >
-            Sign Up
+            Registrar
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
               <Link href='/login' variant='body2'>
-                Already have an account? Sign in
+                Ya tienes cuenta? Inicia sesión
               </Link>
             </Grid>
           </Grid>

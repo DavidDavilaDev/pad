@@ -30,7 +30,7 @@ const App = () => {
         <Fragment>
           <Alert />
           <Switch>
-            <Route exact path='/' component={Landing} />
+            <Route exact path='/' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/dashboard' component={Dashboard} />

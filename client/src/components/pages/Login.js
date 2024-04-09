@@ -29,9 +29,6 @@ const Login = () => {
 
   const { email, password } = formData;
 
-  useEffect(() => {
-    document.title = 'TrelloClone | Sign In';
-  }, []);
 
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -49,10 +46,7 @@ const Login = () => {
       <CssBaseline />
       <div className={classes.paper}>
         <Typography component='h1' variant='h4'>
-          TrelloClone
-        </Typography>
-        <Typography component='h1' variant='h5'>
-          Sign in
+          Inicia Sesión
         </Typography>
         <form className={classes.form} onSubmit={(e) => onSubmit(e)}>
           <TextField
@@ -60,7 +54,7 @@ const Login = () => {
             margin='normal'
             required
             fullWidth
-            label='Email Address'
+            label='Correo'
             name='email'
             autoComplete='email'
             autoFocus
@@ -73,7 +67,7 @@ const Login = () => {
             required
             fullWidth
             name='password'
-            label='Password'
+            label='Contraseña'
             type='password'
             autoComplete='current-password'
             value={password}
@@ -86,12 +80,12 @@ const Login = () => {
             color='primary'
             className={classes.submit}
           >
-            Sign In
+            Iniciar
           </Button>
           <Grid container justify='flex-end'>
             <Grid item>
               <Link href='/register' variant='body2'>
-                Don't have an account? Sign Up
+                No tienes cuenta? Registrate
               </Link>
             </Grid>
           </Grid>

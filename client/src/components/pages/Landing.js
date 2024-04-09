@@ -6,18 +6,14 @@ import { useSelector } from 'react-redux';
 const Landing = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  useEffect(() => {
-    document.title = 'TrelloClone';
-  }, []);
-
   if (isAuthenticated) {
     return <Redirect to='/dashboard' />;
   }
 
   return (
     <section className='landing'>
-      <nav className='top'>
-        <h2>TrelloClone</h2>
+      <nav className='landing-inner'>
+        <h2></h2>
         <div>
           <Button color='inherit' href='/login'>
             Login
@@ -27,17 +23,6 @@ const Landing = () => {
           </Button>
         </div>
       </nav>
-      <div className='landing-inner'>
-        <h1>TrelloClone</h1>
-        <p>
-          Just like <a href='https://trello.com/'>Trello</a>, but made by just one guy!
-        </p>
-        <div className='buttons'>
-          <Button variant='outlined' color='inherit' href='/register'>
-            Sign Up
-          </Button>
-        </div>
-      </div>
     </section>
   );
 };
