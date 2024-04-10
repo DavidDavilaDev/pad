@@ -20,7 +20,7 @@ const CreateBoard = ({ history }) => {
   const body = (
     <div className={`${classes.paper} ${classes.createBoardModal}`}>
       <div className={classes.modalTop}>
-        <h1>Create new board</h1>
+        <h1>Crear nueva tabla</h1>
         <Button onClick={() => setOpen(false)}>
           <CloseIcon />
         </Button>
@@ -37,7 +37,7 @@ const CreateBoard = ({ history }) => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <Button type='submit' fullWidth variant='contained' color='primary'>
-          Create Board
+          Crar Tabla
         </Button>
       </form>
     </div>

@@ -48,7 +48,7 @@ const Members = () => {
       </div>
       {!inviting ? (
         <Button className='invite' variant='contained' onClick={() => setInviting(true)}>
-          Invite
+          Invitar
         </Button>
       ) : (
         <div className='invite'>
@@ -71,7 +71,7 @@ const Members = () => {
               color='primary'
               onClick={onSubmit}
             >
-              Add Member
+              Añadir miembro
             </Button>
             <Button onClick={() => setInviting(false)}>
               <CloseIcon />

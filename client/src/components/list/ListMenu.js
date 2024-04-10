@@ -42,7 +42,7 @@ const ListMenu = ({ listId }) => {
             handleClose();
           }}
         >
-          Archive This List
+          AArchivar esta lista
         </MenuItem>
         <MenuItem>
           <MoveList listId={listId} closeMenu={handleClose} />

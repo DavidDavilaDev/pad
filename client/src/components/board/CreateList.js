@@ -23,7 +23,7 @@ const CreateList = () => {
   return !adding ? (
     <div className='create-list-button'>
       <Button variant='contained' onClick={() => setAdding(true)}>
-        + Add a list
+        + Añadir una lista
       </Button>
     </div>
   ) : (
@@ -41,7 +41,7 @@ const CreateList = () => {
         />
         <div>
           <Button type='submit' variant='contained' color='primary'>
-            Add List
+            Añadir lista
           </Button>
           <Button
             onClick={() => {

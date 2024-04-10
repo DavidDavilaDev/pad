@@ -40,7 +40,7 @@ const CreateChecklistItem = ({ cardId }) => {
         />
         <div>
           <Button type='submit' variant='contained' color='primary'>
-            Add
+            Agregar
           </Button>
           <Button
             onClick={() => {

@@ -38,7 +38,7 @@ const BoardDrawer = () => {
         variant='contained'
         className={open ? classes.hide : classes.showMenuButton}
       >
-        <MoreHorizIcon fontSize='small' /> Show Menu
+        <MoreHorizIcon fontSize='small' /> Ver Menu
       </Button>
       <Drawer
         className={open ? classes.drawer : classes.hide}
@@ -91,7 +91,7 @@ const BoardDrawer = () => {
                 disabled={activityChunks * 10 > activity.length}
                 onClick={() => setActivityChunks(activityChunks + 1)}
               >
-                View More Activity
+                Ver mas actividades
               </Button>
             </div>
           </div>
@@ -101,7 +101,7 @@ const BoardDrawer = () => {
               <Button onClick={() => setViewingArchivedLists(false)}>
                 <ChevronLeftIcon />
               </Button>
-              <h3>Archived Lists</h3>
+              <h3>Archivar listas</h3>
               <Button onClick={handleClose}>
                 <CloseIcon />
               </Button>
@@ -115,7 +115,7 @@ const BoardDrawer = () => {
               <Button onClick={() => setViewingArchivedCards(false)}>
                 <ChevronLeftIcon />
               </Button>
-              <h3>Archived Cards</h3>
+              <h3>Archivar cartas</h3>
               <Button onClick={handleClose}>
                 <CloseIcon />
               </Button>

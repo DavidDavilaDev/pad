@@ -59,7 +59,7 @@ const ChecklistItem = ({ item, card }) => {
           />
           <div>
             <Button type='submit' variant='contained' color='primary'>
-              Save
+              Guardar
             </Button>
             <Button
               onClick={() => {

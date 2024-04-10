@@ -73,7 +73,7 @@ const CardModal = ({ cardId, open, setOpen, card, list }) => {
             }
             className={classes.button}
           >
-            Save All Changes
+            Guardar todos los cambios
           </Button>
         </form>
         <div className={classes.modalSection}>

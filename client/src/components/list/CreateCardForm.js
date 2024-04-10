@@ -39,7 +39,7 @@ const CreateCardForm = ({ listId, setAdding }) => {
       </Card>
       <div className='card-actions'>
         <Button type='submit' variant='contained' color='primary'>
-          Add Card
+          Añadir carta
         </Button>
         <Button
           onClick={() => {

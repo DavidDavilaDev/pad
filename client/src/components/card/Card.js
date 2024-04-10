@@ -154,7 +154,7 @@ const Card = ({ cardId, list, index }) => {
           </CardMUI>
           <div className='card-actions'>
             <Button type='submit' variant='contained' color='primary'>
-              Save
+              Guardar
             </Button>
             <Button
               onClick={() => {

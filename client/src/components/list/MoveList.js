@@ -54,7 +54,7 @@ const MoveList = ({ listId, closeMenu }) => {
         </div>
         <DialogActions className={classes.moveListBottom}>
           <FormControl>
-            <InputLabel shrink>Position</InputLabel>
+            <InputLabel shrink>Posicion</InputLabel>
             <Select
               value={position}
               required
@@ -74,7 +74,7 @@ const MoveList = ({ listId, closeMenu }) => {
               className={classes.moveListButton}
               onClick={onSubmit}
             >
-              Move List
+              Mover Lista
             </Button>
           </FormControl>
         </DialogActions>

@@ -17,9 +17,6 @@ const Navbar = () => {
       <Link to='/dashboard'>Padlet</Link>
       <Link to='/' onClick={() => dispatch(logout())}>
         Cerrar Sesion
-      <Link to='/' onClick={() => dispatch(logout())}>
-        Cerrar Sesión
-      </Link>
       </Link>
     </nav>
   );
