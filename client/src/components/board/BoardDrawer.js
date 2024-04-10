@@ -63,13 +63,13 @@ const BoardDrawer = () => {
                 <ListItemIcon>
                   <ArchiveIcon />
                 </ListItemIcon>
-                <ListItemText primary={'Archived Lists'} />
+                <ListItemText primary={'Archivar listas'} />
               </ListItem>
               <ListItem button onClick={() => setViewingArchivedCards(true)}>
                 <ListItemIcon>
                   <ArchiveIcon />
                 </ListItemIcon>
-                <ListItemText primary={'Archived Cards'} />
+                <ListItemText primary={'Archivar cartas'} />
               </ListItem>
             </List>
             <Divider />

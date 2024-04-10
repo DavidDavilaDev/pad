@@ -46,7 +46,7 @@ const CreateBoard = ({ history }) => {
   return (
     <div>
       <button className='board-card create-board-card' onClick={() => setOpen(true)}>
-        Create new board
+        Crear nuevo Tablero
       </button>
       <Modal open={open} onClose={() => setOpen(false)}>
         {body}

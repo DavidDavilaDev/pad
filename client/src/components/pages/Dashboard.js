@@ -18,7 +18,7 @@ const Dashboard = () => {
 
 
   useEffect(() => {
-    document.title = 'Your Boards | Padlet';
+    document.title = 'Tus tableros | Padlet';
   }, []);
 
 

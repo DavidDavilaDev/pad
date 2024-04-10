@@ -39,7 +39,7 @@ const ArchivedCards = () => {
                 >
                   Eliminar carta
                 </Button>
-                <Button onClick={() => onSendBack(card._id)}>Send to List</Button>
+                <Button onClick={() => onSendBack(card._id)}>Enviar Listas</Button>
               </div>
             </ListItem>
           ))}
