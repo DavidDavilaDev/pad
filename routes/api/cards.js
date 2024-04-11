@@ -100,6 +100,7 @@ router.get('/:id', auth, async (req, res) => {
 });
 
 // Edit a card's title, description, and/or label
+// Edit a card's title, description, and/or label
 router.patch('/edit/:id', [auth, member, upload.single('multimedia')], async (req, res) => {
   try {
     const { title, description, label } = req.body;
@@ -124,7 +125,8 @@ router.patch('/edit/:id', [auth, member, upload.single('multimedia')], async (re
       card.label = label;
     }
     if (ruta_multimedia) {
-      card.multimedia = ruta_multimedia; // Actualiza la ruta del archivo multimedia si se proporcionó uno
+      // Guarda solo el nombre del archivo en la base de datos
+      card.multimedia = nombre_archivo;
     }
 
     await card.save();
@@ -135,6 +137,7 @@ router.patch('/edit/:id', [auth, member, upload.single('multimedia')], async (re
     res.status(500).send('Server Error');
   }
 });
+
 
 
 // Archive/Unarchive a card

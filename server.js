@@ -33,6 +33,9 @@ app.use('/api/lists', require('./routes/api/lists'));
 app.use('/api/cards', require('./routes/api/cards'));
 app.use('/api/checklists', require('./routes/api/checklists'));
 
+// Serve static assets (multimedia files)
+app.use('/archivos', express.static(path.join(__dirname, 'routes', 'archivos')));
+
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder

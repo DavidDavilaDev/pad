@@ -95,7 +95,7 @@ const CardModal = ({ cardId, open, setOpen, card, list }) => {
           <input type='file' onChange={onFileChange} />
           {/* Mostrar indicador de carga si loading es true */} Mostrar enlace del archivo si fileURL está disponible
           <div style={{ marginTop: '20px' }}>
-  <a href={card.multimedia} target='_blank'>
+  <a href={`http://localhost:5000/archivos/${card.multimedia}`} target='_blank'>
     {card.multimedia}
   </a>
 </div>
