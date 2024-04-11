@@ -39,6 +39,9 @@ const CardSchema = new Schema({
     required: true,
     default: false,
   },
+  multimedia: {
+    type: String, // Puedes cambiar este tipo según el tipo de archivo multimedia que estés manejando (por ejemplo, String para guardar la ruta del archivo)
+  },
 });
 
 module.exports = Card = model('card', CardSchema);

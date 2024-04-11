@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { GithubPicker } from 'react-color';
 import { editCard, archiveCard } from '../../actions/board';
-import { Modal, TextField, Button } from '@material-ui/core';
+import { Modal, TextField, Button, CircularProgress } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import MoveCard from './MoveCard';
 import DeleteCard from './DeleteCard';
@@ -15,6 +15,9 @@ const CardModal = ({ cardId, open, setOpen, card, list }) => {
   const classes = useStyles();
   const [title, setTitle] = useState(card.title);
   const [description, setDescription] = useState(card.description);
+  const [file, setFile] = useState(null);
+  const [fileURL, setFileURL] = useState('');
+  const [loading, setLoading] = useState(false); // Estado para controlar la carga del archivo
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -32,10 +35,36 @@ const CardModal = ({ cardId, open, setOpen, card, list }) => {
     setOpen(false);
   };
 
+  const onFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const onFileUpload = async () => {
+    if (file) {
+      setLoading(true); // Establecer loading a true mientras se carga el archivo
+      const formData = new FormData();
+      formData.append('multimedia', file);
+      const response = await dispatch(editCard(cardId, formData));
+      setLoading(false); // Establecer loading a false después de cargar el archivo
+      if (response) {
+        setFileURL(response.data.url);
+      }
+    }
+  };
+  const extractFileName = (path) => {
+    const pathArray = path.split('\\'); // Separar la ruta por las barras invertidas
+    const fileNameWithExtension = pathArray[pathArray.length - 1]; // Obtener el último elemento que debería ser el nombre del archivo con extensión
+    const fileNameArray = fileNameWithExtension.split('.'); // Separar el nombre del archivo y la extensión
+    const fileName = fileNameArray[0]; // Obtener solo el nombre del archivo
+    return fileName;
+  };
+
+  
+
   return (
     <Modal open={open} onClose={() => setOpen(false)}>
-      <div className={`${classes.paper} ${classes.cardModal}`}>
-        <form onSubmit={(e) => onTitleDescriptionSubmit(e)}>
+    <div className={`${classes.paper} ${classes.cardModal}`}>
+      <form onSubmit={(e) => onTitleDescriptionSubmit(e)}>
           <div className={classes.modalTop}>
             <TextField
               variant='outlined'
@@ -62,6 +91,19 @@ const CardModal = ({ cardId, open, setOpen, card, list }) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+          {/* Campo de entrada de archivo */}
+          <input type='file' onChange={onFileChange} />
+          {/* Mostrar indicador de carga si loading es true */} Mostrar enlace del archivo si fileURL está disponible
+          <div style={{ marginTop: '20px' }}>
+  <a href={card.multimedia} target='_blank'>
+    {card.multimedia}
+  </a>
+</div>
+
+          {/* Botón para cargar el archivo multimedia */}
+          <Button variant='contained' color='secondary' onClick={onFileUpload}>
+            Subir archivo
+          </Button>
           <Button
             type='submit'
             variant='contained'
@@ -75,6 +117,7 @@ const CardModal = ({ cardId, open, setOpen, card, list }) => {
           >
             Guardar todos los cambios
           </Button>
+          {/* Botón para cargar el archivo multimedia */}
         </form>
         <div className={classes.modalSection}>
           <CardMembers card={card} />

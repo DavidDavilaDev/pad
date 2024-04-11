@@ -238,6 +238,8 @@ export const editCard = (cardId, formData) => async (dispatch) => {
       type: EDIT_CARD,
       payload: res.data,
     });
+
+    return res; // Devolver la respuesta
   } catch (err) {
     dispatch({
       type: BOARD_ERROR,
@@ -245,6 +247,7 @@ export const editCard = (cardId, formData) => async (dispatch) => {
     });
   }
 };
+
 
 // Move card
 export const moveCard = (cardId, formData) => async (dispatch) => {

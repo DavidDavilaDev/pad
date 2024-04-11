@@ -9,6 +9,22 @@ const Board = require('../../models/Board');
 const List = require('../../models/List');
 const Card = require('../../models/Card');
 
+
+const multer = require("multer")
+const path = require("path")
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, '../archivos')); // Ruta donde se guardarán los archivos en el backend
+  },
+  filename: (req, file, cb) => {
+    const fileName = `${Date.now()}-${file.originalname}`;
+    cb(null, fileName);
+  }
+});
+
+const upload = multer({ storage });
+
 // Add a card
 router.post(
   '/',
@@ -84,9 +100,12 @@ router.get('/:id', auth, async (req, res) => {
 });
 
 // Edit a card's title, description, and/or label
-router.patch('/edit/:id', [auth, member], async (req, res) => {
+router.patch('/edit/:id', [auth, member, upload.single('multimedia')], async (req, res) => {
   try {
     const { title, description, label } = req.body;
+    const ruta_multimedia = req.file ? req.file.path : undefined; // Verifica si se cargó un archivo multimedia
+    const nombre_archivo = ruta_multimedia ? path.basename(ruta_multimedia) : undefined;
+
     if (title === '') {
       return res.status(400).json({ msg: 'Title is required' });
     }
@@ -96,6 +115,7 @@ router.patch('/edit/:id', [auth, member], async (req, res) => {
       return res.status(404).json({ msg: 'Card not found' });
     }
 
+    // Actualiza los campos de la tarjeta
     card.title = title ? title : card.title;
     if (description || description === '') {
       card.description = description;
@@ -103,6 +123,10 @@ router.patch('/edit/:id', [auth, member], async (req, res) => {
     if (label || label === 'none') {
       card.label = label;
     }
+    if (ruta_multimedia) {
+      card.multimedia = ruta_multimedia; // Actualiza la ruta del archivo multimedia si se proporcionó uno
+    }
+
     await card.save();
 
     res.json(card);
@@ -111,6 +135,7 @@ router.patch('/edit/:id', [auth, member], async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
 
 // Archive/Unarchive a card
 router.patch('/archive/:archive/:id', [auth, member], async (req, res) => {
